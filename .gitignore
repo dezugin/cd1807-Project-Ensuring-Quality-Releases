@@ -3,6 +3,7 @@
 **/*.exe
 # Local .terraform directories
 **/.terraform/*
+**/.terraform.locl.hcl
 
 # .tfstate files
 *.tfstate
