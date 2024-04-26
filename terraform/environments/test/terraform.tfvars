@@ -6,7 +6,7 @@ tenant_id = "3cc80a47-61bd-4b4f-a452-9caac39e1fac"
 
 # Resource Group/Location
 location = "East US"
-resource_group_name = "myResourceGroup2"
+resource_group = "myResourceGroup2"
 application_type = "myApplication3522661"
 
 # Network
