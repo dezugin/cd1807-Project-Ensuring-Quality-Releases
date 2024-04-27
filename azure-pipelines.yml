@@ -42,7 +42,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'myResourceGroup2'
         backendAzureRmStorageAccountName: 'tfstate2571717897'
@@ -78,7 +78,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'apply'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
     # ToDo: Change the workingDirectory path, as applicable to you
