@@ -201,7 +201,7 @@ stages:
   - deployment: FakeRestAPI
     pool: udacity
       #vmImage: 'Ubuntu-18.04'      
-    environment: test-vm   # ToDo
+    environment: linux-test   # ToDo
     strategy:
       runOnce:
         deploy:
