@@ -210,8 +210,8 @@ stages:
             displayName: 'Deploy Azure Web App'
             inputs:
               azureSubscription: 'ade6a84f-0f21-4c3d-95b4-6ee646349d39'     # ToDo e392412d-fc0c-470a-8211-546ebd622558
-              appName: 'dezugin-webapp'               # ToDo
-              appType: webApp
+              appName: 'myapplication35226612-appservice'               # ToDo
+              appType: 'myApplication35226612'
               package: $(Pipeline.Workspace)/fakerestapi/$(Build.BuildId)-fakerestapi.zip       # ToDo: Use the published zip artifact. 
               deploymentMethod: zipDeploy
           #--------------------------------------------#    
