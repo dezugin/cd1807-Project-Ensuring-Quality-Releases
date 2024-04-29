@@ -213,6 +213,7 @@ stages:
               appName: 'dezugin-webapp'               # ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/fakerestapi/$(Build.BuildId)-fakerestapi.zip       # ToDo: Use the published zip artifact. 
+              deploymentMethod: zipDeploy
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
