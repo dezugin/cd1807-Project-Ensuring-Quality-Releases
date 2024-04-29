@@ -96,11 +96,11 @@ stages:
       inputs:
         script: 'sudo apt-get install nodejs -y'
         workingDirectory: $(System.DefaultWorkingDirectory)
-    #- task: CmdLine@2
-      #displayName: Install npm
-      #inputs:
-       # script: 'sudo apt install npm -y'
-       # workingDirectory: $(System.DefaultWorkingDirectory)
+    - task: CmdLine@2
+      displayName: Install npm
+      inputs:
+        script: 'sudo apt-get install npm -y'
+        workingDirectory: $(System.DefaultWorkingDirectory)
 #--------------------------------------------#    
     # Postman - Install Newman    
     # ToDo: Update the command and verify the working directory
