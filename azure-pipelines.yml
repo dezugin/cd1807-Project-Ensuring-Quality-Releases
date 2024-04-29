@@ -94,12 +94,12 @@ stages:
     - task: CmdLine@2
       displayName: Install nodejs
       inputs:
-        script: 'sudo apt-get install nodejs'
+        script: 'sudo apt-get install nodejs -y'
         workingDirectory: $(System.DefaultWorkingDirectory)
     - task: CmdLine@2
       displayName: Install npm
       inputs:
-        script: 'sudo apt install npm'
+        script: 'sudo apt install npm -y'
         workingDirectory: $(System.DefaultWorkingDirectory)
 #--------------------------------------------#    
     # Postman - Install Newman    
