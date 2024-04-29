@@ -78,7 +78,7 @@ stages:
       displayName: Terraform apply
       inputs:
         provider: 'azurerm'
-        command: 'apply' #apply
+        command: 'destroy' #apply
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
@@ -91,21 +91,21 @@ stages:
     #     command: 'destroy'
     #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
     #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
-    - task: CmdLine@2
-      displayName: apt get update
-      inputs:
-        script: 'sudo apt-get update -y'
-        workingDirectory: $(System.DefaultWorkingDirectory)
-    - task: CmdLine@2
-      displayName: Install nodejs
-      inputs:
-        script: 'sudo apt-get install nodejs -y'
-        workingDirectory: $(System.DefaultWorkingDirectory)
-    - task: CmdLine@2
-      displayName: Install npm
-      inputs:
-        script: 'sudo apt-get install npm -y'
-        workingDirectory: $(System.DefaultWorkingDirectory)
+    #- task: CmdLine@2
+    #  displayName: apt get update
+    #  inputs:
+    #    script: 'sudo apt-get update -y'
+    #    workingDirectory: $(System.DefaultWorkingDirectory)
+    #- task: CmdLine@2
+    #  displayName: Install nodejs
+    #  inputs:
+    #    script: 'sudo apt-get install nodejs -y'
+    #    workingDirectory: $(System.DefaultWorkingDirectory)
+    #- task: CmdLine@2
+    #  displayName: Install npm
+    #  inputs:
+    #    script: 'sudo apt-get install npm -y'
+    #    workingDirectory: $(System.DefaultWorkingDirectory)
 #--------------------------------------------#    
     # Postman - Install Newman    
     # ToDo: Update the command and verify the working directory
