@@ -169,6 +169,12 @@ stages:
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
 
+    - task: PublishPipelineArtifact@1
+      displayName: 'Publish FakeRestAPI artifact'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/fakerestapi-$(Build.BuildId).zip'
+        artifactName: 'fakerestapi'
+
     #--------------------------------------------#  
     # JMeter (Performance) Test Suite - Archive
     # ToDo: Complete the ArchiveFiles@2 task and publish step 
