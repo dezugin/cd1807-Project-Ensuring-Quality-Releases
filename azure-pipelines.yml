@@ -100,7 +100,12 @@ stages:
     #  displayName: Install nodejs
     #  inputs:
     #    script: 'sudo apt-get install nodejs -y'
-    #    workingDirectory: $(System.DefaultWorkingDirectory)
+    #    workingDirectory: $(System.DefaultWorkingDirectory) 
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+
     #- task: CmdLine@2
     #  displayName: Install npm
     #  inputs:
@@ -113,6 +118,11 @@ stages:
       displayName: Install Newman
       inputs:
         script: 'sudo npm install -g newman'
+        workingDirectory: $(System.DefaultWorkingDirectory)
+    - task: CmdLine@2
+      displayName: Install Newman Reporter JUnit
+      inputs:
+        script: 'npm install -g newman-reporter-junitfullreport'
         workingDirectory: $(System.DefaultWorkingDirectory)
     # Postman Data Validation Test Suite    
     # ToDo: Verify the working directory
@@ -199,7 +209,9 @@ stages:
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
   - deployment: FakeRestAPI
-    pool: udacity
+    pool:
+      vmImage: 'Ubuntu-18.04' 
+      name: udacity
       #vmImage: 'Ubuntu-22.04'      
     environment: linux-test   # ToDo
     strategy:
@@ -212,7 +224,7 @@ stages:
               azureSubscription: '653d2dc0-c167-4229-bc22-9c758a209d9e'#'ade6a84f-0f21-4c3d-95b4-6ee646349d39'     # ToDo e392412d-fc0c-470a-8211-546ebd622558
               appName: 'myapplication35226612-appservice'               # ToDo
               appType: 'myApplication35226612'
-              package: $(Pipeline.Workspace)/fakerestapi/$(Build.BuildId)-fakerestapi.zip       # ToDo: Use the published zip artifact. 
+              package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip       # ToDo: Use the published zip artifact. 
               deploymentMethod: zipDeploy
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
