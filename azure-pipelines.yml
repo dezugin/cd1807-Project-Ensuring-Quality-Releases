@@ -160,11 +160,6 @@ stages:
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
 
-    - task: PublishPipelineArtifact@1
-      displayName: 'Publish FakeRestAPI artifact'
-      inputs:
-        targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
-        artifactName: 'fakerestapi'
 
     #--------------------------------------------#  
     # JMeter (Performance) Test Suite - Archive
@@ -190,11 +185,11 @@ stages:
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
   - deployment: FakeRestAPI
-    pool:
-      vmImage: 'Ubuntu-18.04' 
+    pool: #udacity
+      vmImage: 'Ubuntu-20.04' 
       name: udacity
       #vmImage: 'Ubuntu-22.04'      
-    environment: linux-test   # ToDo
+    environment: "linux-test"   # ToDo
     strategy:
       runOnce:
         deploy:
@@ -206,7 +201,6 @@ stages:
               appName: 'myapplication35226612-appservice'               # ToDo
               appType: 'myApplication35226612'
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip       # ToDo: Use the published zip artifact. 
-              deploymentMethod: zipDeploy
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
