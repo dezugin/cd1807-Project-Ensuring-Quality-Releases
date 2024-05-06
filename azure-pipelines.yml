@@ -199,8 +199,8 @@ stages:
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
   - deployment: FakeRestAPI
-    resourceType: VirtualMachine
-      #vmImage: 'Ubuntu-18.04'      
+    pool:
+      vmImage: 'Ubuntu-18.04'      
     environment: linux-test   # ToDo
     strategy:
       runOnce:
