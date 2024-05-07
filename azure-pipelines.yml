@@ -167,7 +167,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive PerformanceTestSuite'
       inputs:
-        rootFolderOrFile: 
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip'
@@ -204,14 +204,25 @@ stages:
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
+            displayName: 'Run JMeter on Azure Web App'
             inputs:
               script: |
-                wget "https://apache.mirrors.lucidnetworks.net//jmeter/binaries/apache-jmeter-5.2.1.tgz"
-                tar -xf apache-jmeter-5.2.1.tgz
+                wget "https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.tar.gz"
+                sudo tar -zxf jdk-22_linux-x64_bin.tar.gz --directory /opt/java
+                wget "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
+                sudo tar -zxf apache-jmeter-5.6.3.tgz --directory /opt/jmeter
                 unzip -o $(Build.BuildId)-perftests.zip
-                ./apache-jmeter-5.2.1/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f
-                cat jmeter.log                                                                           # ToDo: Write your commands
-              workingDirectory: $(Pipeline.Workspace)/fakerestapi/            # ToDo: Use the artifact name from the task above
+                PATH=/opt/java/bin:$PATH && export PATH
+                
+                /opt/jmeter/bin/jmeter -n  -t stresstest.jmx -l log/jmeter/stresstest/stresstest.csv -e -f -o log/jmeter/stresstest/html -j log/jmeter/stresstest/jmeter.log
+                /opt/jmeter/bin/jmeter -n  -t endurancetest.jmx -l log/jmeter/endurancetest/endurancetest.csv -e -f -o log/jmeter/endurancetest/html -j log/jmeter/endurancetest/jmeter.log
+                
+                echo "JMETER LOG STRESS TEST"
+                sudo cat log/jmeter/stresstest/jmeter.log
+
+                echo "JMETER LOG ENDURANCE TEST"
+                sudo cat log/jmeter/endurancetest/jmeter.log
+              workingDirectory: $(Pipeline.Workspace)/drop-perfests/            # ToDo: Use the artifact name from the task above
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
