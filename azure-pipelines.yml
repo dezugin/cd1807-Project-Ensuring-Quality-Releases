@@ -227,7 +227,7 @@ stages:
 
                 echo "JMETER LOG ENDURANCE TEST"
                 sudo cat log/jmeter/endurancetest/jmeter.log
-              workingDirectory: $(Pipeline.Workspace)/drop-perfests            # ToDo: Use the artifact name from the task above
+              workingDirectory: $(Pipeline.Workspace)/drop-perftests            # ToDo: Use the artifact name from the task above
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
