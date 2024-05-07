@@ -237,14 +237,14 @@ stages:
     environment:
       name:   'linux-test'      # ToDo: Change/provide a name
       resourceType: VirtualMachine
-      tags: selenium
     strategy:
       runOnce:
         deploy:
           steps:
           - download: current
             artifact: drop-uitests     # ToDo: Change/provide a name
-            
+            name: "download_tests"
+
           - task: Bash@3
             inputs:
               targetType: 'inline'
