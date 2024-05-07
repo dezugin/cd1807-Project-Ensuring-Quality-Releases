@@ -207,18 +207,20 @@ stages:
             displayName: 'Run JMeter on Azure Web App'
             inputs:
               script: |
-                echo "Downloading java"
-                wget "https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.tar.gz"
-                echo "unzipping java"
-                sudo tar -zxf jdk-22_linux-x64_bin.tar.gz --directory /opt/java
+                sudo apt-get update
+                sudo apt install curl -y
+                sudo apt-get -y install zip
+                sudo apt install -y default-jre
+                sudo apt install -y default-jdk
+                
                 echo "Downloading jmeter"
                 wget "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
-                sudo tar -zxf apache-jmeter-5.6.3.tgz --directory /opt/jmeter
+                tar -xf apache-jmeter-5.6.3.tgz 
                 unzip -o $(Build.BuildId)-perftests.zip
 
                 echo "running tests"
-                /opt/jmeter/bin/jmeter -n  -t stresstest.jmx -l log/jmeter/stresstest/stresstest.csv -e -f -o log/jmeter/stresstest/html -j log/jmeter/stresstest/jmeter.log
-                /opt/jmeter/bin/jmeter -n  -t endurancetest.jmx -l log/jmeter/endurancetest/endurancetest.csv -e -f -o log/jmeter/endurancetest/html -j log/jmeter/endurancetest/jmeter.log
+                ./apache-jmeter-5.6.3/bin/jmeter -n  -t stresstest.jmx -l log/jmeter/stresstest/stresstest.csv -e -f -o log/jmeter/stresstest/html -j log/jmeter/stresstest/jmeter.log
+                ./apache-jmeter-5.6.3/bin/jmeter -n  -t endurancetest.jmx -l log/jmeter/endurancetest/endurancetest.csv -e -f -o log/jmeter/endurancetest/html -j log/jmeter/endurancetest/jmeter.log
                 
                 echo "JMETER LOG STRESS TEST"
                 sudo cat log/jmeter/stresstest/jmeter.log
