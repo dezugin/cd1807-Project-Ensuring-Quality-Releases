@@ -274,4 +274,5 @@ stages:
                 export PATH=$PATH:/home/testuser/app
                 echo "Starting Selenium Tests"
                 python3 /home/testuser/login.py >> selenium.log
+                sudo cat selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
