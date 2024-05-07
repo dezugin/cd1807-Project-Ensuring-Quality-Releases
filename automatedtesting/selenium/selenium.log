@@ -1,0 +1,23 @@
+2024-05-07T05:35:06Z Open chrome
+2024-05-07T05:58:11Z Open chrome
+2024-05-07T05:59:35Z Open chrome
+2024-05-07T06:02:47Z Open chrome
+2024-05-07T06:08:12Z Open chrome
+2024-05-07T06:08:39Z Open chrome
+2024-05-07T06:15:37Z Open chrome
+2024-05-07T06:15:40Z Browser started successfully. Navigating to the demo page to login.
+2024-05-07T06:15:41Z Enter username standard_user
+2024-05-07T06:15:41Z Enter password secret_sauce
+2024-05-07T06:15:41Z Click login button
+2024-05-07T06:15:42Z Login success
+2024-05-07T06:15:42Z Add 6 product
+2024-05-07T06:15:42Z Product Sauce Labs Backpack was added to cart
+2024-05-07T06:15:42Z Product Sauce Labs Bike Light was added to cart
+2024-05-07T06:15:42Z Product Sauce Labs Bolt T-Shirt was added to cart
+2024-05-07T06:15:42Z Product Sauce Labs Fleece Jacket was added to cart
+2024-05-07T06:15:42Z Product Sauce Labs Onesie was added to cart
+2024-05-07T06:15:42Z Product Test.allTheThings() T-Shirt (Red) was added to cart
+2024-05-07T06:15:42Z Cart count = 6
+2024-05-07T06:15:42Z Cart page
+2024-05-07T06:15:42Z Remove all product
+2024-05-07T06:15:42Z Remove success or not
