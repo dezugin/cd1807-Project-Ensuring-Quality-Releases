@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1715056163068,801,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,3468,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/1,801,0,595
+1715056163874,169,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,5540,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/3,168,0,0
+1715056163438,617,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,4362,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/2,616,0,434
+1715056164043,204,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,3574,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/4,204,0,0
+1715056164055,193,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,5670,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/5,192,0,0
+1715056164248,308,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,4671,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/7,307,0,0
+1715056164248,309,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,4287,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/6,308,0,0
+1715056164558,202,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,5600,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/8,201,0,0
+1715056164559,202,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,4904,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/9,201,0,0
+1715056164762,208,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,5820,180,2,2,https://myapplication35226612.azurewebsites.net/api/Books/10,206,0,0
+1715056164766,222,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,4834,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/1,218,0,0
+1715056164971,202,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,5656,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/2,200,0,0
+1715056164989,184,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,4799,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/3,183,0,0
+1715056165176,199,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,4712,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/5,197,0,0
+1715056165175,201,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,4344,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/4,200,0,0
+1715056165379,201,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/7,201,0,0
+1715056165377,203,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/6,203,0,0
+1715056165582,198,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/8,198,0,0
+1715056165583,198,Hugo GET Book,200,OK,Stress Test 1-1,text,true,,1082,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/9,198,0,0
+1715056165782,211,Hugo GET Book,200,OK,Stress Test 1-2,text,true,,1086,180,1,1,https://myapplication35226612.azurewebsites.net/api/Books/10,211,0,0

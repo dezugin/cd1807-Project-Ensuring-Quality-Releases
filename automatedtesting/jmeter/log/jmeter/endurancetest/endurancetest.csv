@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1715056197262,1097,Hugo - Get Book,200,OK,Endurance Test 1-2,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/2,1097,0,727
+1715056197262,1097,Hugo - Get Book,200,OK,Endurance Test 1-1,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/1,1097,0,727
+1715056198362,192,Hugo - Get Book,200,OK,Endurance Test 1-1,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/3,192,0,0
+1715056198362,197,Hugo - Get Book,200,OK,Endurance Test 1-2,text,true,,1083,179,2,2,https://myapplication35226612.azurewebsites.net/api/Books/4,197,0,0
